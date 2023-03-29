@@ -44,8 +44,49 @@ const restaurant = {
   orderPasta: function (ing1, ing2, ing3) {
     console.log(`Here is your delicious pasta with ${ing1},${ing2},${ing3}`);
   },
+
+  orderPizza: function (mainIngredient, ...otherIngredient) {
+    console.log(mainIngredient);
+    console.log(otherIngredient);
+  },
 };
 
+// 1)Destructuring
+
+//SPREAD, because on RIGHT side of =
+const arr = [1, 2, ...[3, 4]];
+
+//REST, because on LEFT side of =
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
+
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherFood);
+
+//Obejcts
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
+
+// 2)Functions
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+  console.log(sum);
+};
+add(2, 3);
+add(34, 23, 43, 5, 78, 3);
+
+const x = [23, 5, 7];
+add(...x);
+
+restaurant.orderPizza('onion', 'olives', 'cheese');
+restaurant.orderPizza('cheese');
+/*
+///////////////////////////
+//The Spread Operator(...)
 const arr = [7, 8, 9];
 const badExampleArr = [1, 2, arr[0], arr[1], arr[2]];
 console.log(badExampleArr);
@@ -90,7 +131,7 @@ const restaurantCopy = { ...restaurant };
 restaurantCopy.name = 'Mantıcı hacı usta';
 console.log(restaurantCopy.name);
 console.log(restaurant.name);
-
+*/
 //Destructuring Objects
 // restaurant.orderDelivery({
 //   time: '22.30',
