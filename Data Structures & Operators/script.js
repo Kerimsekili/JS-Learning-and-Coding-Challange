@@ -40,47 +40,97 @@ const restaurant = {
     console.log(`Order Recieved! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]}
     will be delivered to ${adress} at ${time}`);
   },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`Here is your delicious pasta with ${ing1},${ing2},${ing3}`);
+  },
 };
 
-restaurant.orderDelivery({
-  time: '22.30',
-  adress: 'Via del ks,21',
-  mainIndex: 2,
-  starterIndex: 2,
-});
+const arr = [7, 8, 9];
+const badExampleArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badExampleArr);
 
-restaurant.orderDelivery({
-  adress: 'Goncagül sk',
-  starterIndex: 1,
-});
+const newArr = [1, 2, ...arr];
+console.log(newArr);
 
-const { name, openingHours, categories } = restaurant;
-console.log(name, openingHours, categories);
+console.log(...newArr);
 
-//Default values
-const {
-  name: restaurantName,
-  openingHours: hours,
-  categories: tags,
-} = restaurant;
-console.log(restaurantName, hours, tags);
+const newMenu = [...restaurant.mainMenu, 'Gnocci', 'Manti'];
+console.log(newMenu);
 
-const { menu = [], starterMenu: starters = [] } = restaurant;
-console.log(menu, starters);
+//Copy Array
+const mainMenuCopy = [...restaurant.mainMenu];
 
-//Mutating variables
-let a = 111;
-let b = 999;
-const obj = { a: 23, b: 34, c: 434 };
+//Join 2 arrays or more
+const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(menu);
 
-({ a, b } = obj);
-console.log(a, b);
+//Iterables : arrays,strings,maps, sets. NOT opjects
+const str = 'Kerim';
+const letters = [...str, '', 'S.'];
+console.log(letters);
 
-//Nested objects
-const {
-  fri: { open: o, close: c },
-} = openingHours;
-console.log(o, c);
+//Real World Example
+// const ingredients = [
+//   prompt("Let's make apsta! Ingredient 1?"),
+//   prompt('Ingredient 2?'),
+//   prompt('Ingredient 3?'),
+// ];
+// console.log(ingredients);
+
+// restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+
+// restaurant.orderPasta(...ingredients);
+
+//Objects
+const newRestaurant = { foundedIn: 2000, ...restaurant, founter: 'Kerim' };
+console.log(newRestaurant);
+
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'Mantıcı hacı usta';
+console.log(restaurantCopy.name);
+console.log(restaurant.name);
+
+//Destructuring Objects
+// restaurant.orderDelivery({
+//   time: '22.30',
+//   adress: 'Via del ks,21',
+//   mainIndex: 2,
+//   starterIndex: 2,
+// });
+
+// restaurant.orderDelivery({
+//   adress: 'Goncagül sk',
+//   starterIndex: 1,
+// });
+
+// const { name, openingHours, categories } = restaurant;
+// console.log(name, openingHours, categories);
+
+// //Default values
+// const {
+//   name: restaurantName,
+//   openingHours: hours,
+//   categories: tags,
+// } = restaurant;
+// console.log(restaurantName, hours, tags);
+
+// const { menu = [], starterMenu: starters = [] } = restaurant;
+// console.log(menu, starters);
+
+// //Mutating variables
+// let a = 111;
+// let b = 999;
+// const obj = { a: 23, b: 34, c: 434 };
+
+// ({ a, b } = obj);
+// console.log(a, b);
+
+// //Nested objects
+// const {
+//   fri: { open: o, close: c },
+// } = openingHours;
+// console.log(o, c);
 
 ///////////////////////////////
 //Destructuring arrays
