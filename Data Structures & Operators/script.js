@@ -51,39 +51,86 @@ const restaurant = {
   },
 };
 
+/*
+/////////////////////////////
+//The nullish coalescing Operator
+// restaurant.numGuests = 0;
+const guests = restaurant.numGuests || 10;
+console.log(guests);
+
+//Nullish: null and undefined (NOT or 0)
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect);
+*/
+/*
+////////////////////////
+//Short Circuiting (|| and &&)
+
+console.log('---- OR ---');
+// Use any Data Type,return ANY data type,
+// short circuitting(if first value is truthy, immediately return this value)
+console.log(3 || 'Kerim');
+console.log('' || 'Kerim');
+console.log(true || 0);
+console.log(undefined || null);
+
+console.log(undefined || 0 || '' || 'Hello' || null);
+
+//restaurant.numGuests = 23;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+
+const guest2 = restaurant.numGuests || 10;
+console.log(guest2);
+
+console.log('--- AND ---');
+console.log(0 && 'Kerim');
+console.log(7 && 'KSDK');
+
+console.log('Hi' && 23 && null && 'Jonas');
+
+//Practical Ex
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('Mushrooms', 'Rocfor Cheese');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('Mantar', 'Peynir');
+*/
+
+//REST Pattern and Paramters
 // 1)Destructuring
 
 //SPREAD, because on RIGHT side of =
-const arr = [1, 2, ...[3, 4]];
+// const arr = [1, 2, ...[3, 4]];
 
-//REST, because on LEFT side of =
-const [a, b, ...others] = [1, 2, 3, 4, 5];
-console.log(a, b, others);
+// //REST, because on LEFT side of =
+// const [a, b, ...others] = [1, 2, 3, 4, 5];
+// console.log(a, b, others);
 
-const [pizza, , risotto, ...otherFood] = [
-  ...restaurant.mainMenu,
-  ...restaurant.starterMenu,
-];
-console.log(pizza, risotto, otherFood);
+// const [pizza, , risotto, ...otherFood] = [
+//   ...restaurant.mainMenu,
+//   ...restaurant.starterMenu,
+// ];
+// console.log(pizza, risotto, otherFood);
 
-//Obejcts
-const { sat, ...weekdays } = restaurant.openingHours;
-console.log(weekdays);
+// //Obejcts
+// const { sat, ...weekdays } = restaurant.openingHours;
+// console.log(weekdays);
 
-// 2)Functions
-const add = function (...numbers) {
-  let sum = 0;
-  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
-  console.log(sum);
-};
-add(2, 3);
-add(34, 23, 43, 5, 78, 3);
+// // 2)Functions
+// const add = function (...numbers) {
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+//   console.log(sum);
+// };
+// add(2, 3);
+// add(34, 23, 43, 5, 78, 3);
 
-const x = [23, 5, 7];
-add(...x);
+// const x = [23, 5, 7];
+// add(...x);
 
-restaurant.orderPizza('onion', 'olives', 'cheese');
-restaurant.orderPizza('cheese');
+// restaurant.orderPizza('onion', 'olives', 'cheese');
+// restaurant.orderPizza('cheese');
 /*
 ///////////////////////////
 //The Spread Operator(...)
