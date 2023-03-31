@@ -51,6 +51,36 @@ const restaurant = {
   },
 };
 
+const rest1 = {
+  name: 'Capri',
+  // numGuests: 20,
+  numGuests: 0,
+};
+
+const rest2 = {
+  name: 'La Kero',
+  owner: 'KS',
+};
+
+//OR assignment operator
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
+
+//nullish assignment operator(null or undefined)
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+
+// AND Assignment op
+// rest1.owner = rest1.owner && '<ANONYMUS>';
+// rest2.owner = rest2.owner && '<ANONYMUS>';
+rest1.owner &&= '<ANONYMUS>';
+rest2.owner &&= '<ANONYMUS>';
+
+console.log(rest1);
+console.log(rest2);
+
 /*
 /////////////////////////////
 //The nullish coalescing Operator
