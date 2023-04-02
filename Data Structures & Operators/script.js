@@ -51,6 +51,20 @@ const restaurant = {
   },
 };
 
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of menu) console.log(item);
+
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
+
+// console.log([...menu.entries()]);
+
+/*
+/////////////////////////////
+Coding Challange 1 
+
 const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
@@ -91,7 +105,6 @@ const game = {
     team2: 6.5,
   },
 };
-
 // 1.
 const [players1, players2] = game.players;
 console.log(players1, players2);
@@ -124,7 +137,7 @@ printGoal(...game.scored);
 // 7.
 team1 < team2 && console.log('Team 1 win');
 team1 > team2 && console.log('Team 2 win');
-
+*/
 // const rest1 = {
 //   name: 'Capri',
 //   // numGuests: 20,
