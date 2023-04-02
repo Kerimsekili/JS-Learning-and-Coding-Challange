@@ -51,35 +51,109 @@ const restaurant = {
   },
 };
 
-const rest1 = {
-  name: 'Capri',
-  // numGuests: 20,
-  numGuests: 0,
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 11.33,
+    x: 3.25,
+    team2: 6.5,
+  },
 };
 
-const rest2 = {
-  name: 'La Kero',
-  owner: 'KS',
+// 1.
+const [players1, players2] = game.players;
+console.log(players1, players2);
+
+// 2.
+const [gk, ...fieldPlayers] = players1;
+console.log(gk, fieldPlayers);
+
+// 3.
+const allPlayers = [...players1, ...players2];
+console.log(allPlayers);
+
+// 4.
+const players1Final = [...players1, 'Thiago', 'Coutinho', 'Kerem'];
+
+// 5.
+const {
+  odds: { team1, x: draw, team2 },
+} = game;
+console.log(team1, draw, team2);
+
+// 6.
+const printGoal = function (...players) {
+  console.log(`${players.length} goals were scored`);
 };
+printGoal('Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels');
+printGoal('Lewandowski', 'Gnarby');
+printGoal(...game.scored);
 
-//OR assignment operator
-// rest1.numGuests = rest1.numGuests || 10;
-// rest2.numGuests = rest2.numGuests || 10;
-// rest1.numGuests ||= 10;
-// rest2.numGuests ||= 10;
+// 7.
+team1 < team2 && console.log('Team 1 win');
+team1 > team2 && console.log('Team 2 win');
 
-//nullish assignment operator(null or undefined)
-rest1.numGuests ??= 10;
-rest2.numGuests ??= 10;
+// const rest1 = {
+//   name: 'Capri',
+//   // numGuests: 20,
+//   numGuests: 0,
+// };
 
-// AND Assignment op
-// rest1.owner = rest1.owner && '<ANONYMUS>';
-// rest2.owner = rest2.owner && '<ANONYMUS>';
-rest1.owner &&= '<ANONYMUS>';
-rest2.owner &&= '<ANONYMUS>';
+// const rest2 = {
+//   name: 'La Kero',
+//   owner: 'KS',
+// };
 
-console.log(rest1);
-console.log(rest2);
+// //OR assignment operator
+// // rest1.numGuests = rest1.numGuests || 10;
+// // rest2.numGuests = rest2.numGuests || 10;
+// // rest1.numGuests ||= 10;
+// // rest2.numGuests ||= 10;
+
+// //nullish assignment operator(null or undefined)
+// rest1.numGuests ??= 10;
+// rest2.numGuests ??= 10;
+
+// // AND Assignment op
+// // rest1.owner = rest1.owner && '<ANONYMUS>';
+// // rest2.owner = rest2.owner && '<ANONYMUS>';
+// rest1.owner &&= '<ANONYMUS>';
+// rest2.owner &&= '<ANONYMUS>';
+
+// console.log(rest1);
+// console.log(rest2);
 
 /*
 /////////////////////////////
