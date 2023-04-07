@@ -6,7 +6,7 @@ const openingHours = {
     open: 12,
     close: 22,
   },
-  [weekdays[5]]: {
+  [weekdays[4]]: {
     open: 11,
     close: 23,
   },
@@ -50,6 +50,31 @@ const restaurant = {
   },
 };
 
+if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open);
+
+// WITH optional chaining
+console.log(restaurant.openingHours.mon?.open);
+console.log(restaurant.openingHours?.mon?.open);
+
+//Example
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+for (const day of days) {
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  console.log(`On ${day}, we open at ${open}`);
+}
+
+//Methods
+console.log(restaurant.order?.(0, 1) ?? 'Method does not ex');
+console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not ex');
+
+//Arrays
+const users = [{ name: 'Kerim', email: 'hello@kerim.io' }];
+
+console.log(users[0]?.name ?? 'User empty');
+
+/*
+///////////////////////////////
+// The for-of loop
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
 for (const item of menu) console.log(item);
@@ -57,6 +82,7 @@ for (const item of menu) console.log(item);
 for (const [i, el] of menu.entries()) {
   console.log(`${i + 1}: ${el}`);
 }
+*/
 
 // console.log([...menu.entries()]);
 
