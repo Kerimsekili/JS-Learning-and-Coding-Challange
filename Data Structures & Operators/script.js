@@ -50,6 +50,9 @@ const restaurant = {
   },
 };
 
+/*
+/////////////////////////////////
+// Looping objects
 const properties = Object.keys(openingHours);
 console.log(properties);
 
@@ -69,6 +72,7 @@ const entries = Object.entries(openingHours);
 for (const [key, { open, close }] of entries) {
   console.log(`On ${key} we open at ${open} and close ${close}`);
 }
+*/
 /*
 //////////////////////
 //Optional Chaining
@@ -109,10 +113,10 @@ for (const [i, el] of menu.entries()) {
 
 // console.log([...menu.entries()]);
 
-/*
 /////////////////////////////
-Coding Challange 1 
+// Coding Challange 1
 
+/*
 const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
@@ -148,44 +152,67 @@ const game = {
   scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
   date: 'Nov 9th, 2037',
   odds: {
-    team1: 11.33,
+    team1: 1.33,
     x: 3.25,
     team2: 6.5,
   },
 };
+*/
+
+/*
+////////////////////////////////
+// Coding Challange 2
 // 1.
-const [players1, players2] = game.players;
-console.log(players1, players2);
+for (const [i, player] of game.scored.entries())
+  console.log(`Goal ${i + 1}: ${player}`);
 
 // 2.
-const [gk, ...fieldPlayers] = players1;
-console.log(gk, fieldPlayers);
+const odds = Object.values(game.odds);
+let average = 0;
+for (const odd of odds) average += odd;
+average /= odds.length;
+console.log(average);
 
 // 3.
-const allPlayers = [...players1, ...players2];
-console.log(allPlayers);
-
-// 4.
-const players1Final = [...players1, 'Thiago', 'Coutinho', 'Kerem'];
-
-// 5.
-const {
-  odds: { team1, x: draw, team2 },
-} = game;
-console.log(team1, draw, team2);
-
-// 6.
-const printGoal = function (...players) {
-  console.log(`${players.length} goals were scored`);
-};
-printGoal('Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels');
-printGoal('Lewandowski', 'Gnarby');
-printGoal(...game.scored);
-
-// 7.
-team1 < team2 && console.log('Team 1 win');
-team1 > team2 && console.log('Team 2 win');
+for (const [team, odd] of Object.entries(game.odds)) {
+  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+  console.log(`Odd of ${teamStr}  ${odd}`);
+}
 */
+
+// // 1.
+// const [players1, players2] = game.players;
+// console.log(players1, players2);
+
+// // 2.
+// const [gk, ...fieldPlayers] = players1;
+// console.log(gk, fieldPlayers);
+
+// // 3.
+// const allPlayers = [...players1, ...players2];
+// console.log(allPlayers);
+
+// // 4.
+// const players1Final = [...players1, 'Thiago', 'Coutinho', 'Kerem'];
+
+// // 5.
+// const {
+//   odds: { team1, x: draw, team2 },
+// } = game;
+// console.log(team1, draw, team2);
+
+// // 6.
+// const printGoal = function (...players) {
+//   console.log(`${players.length} goals were scored`);
+// };
+// printGoal('Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels');
+// printGoal('Lewandowski', 'Gnarby');
+// printGoal(...game.scored);
+
+// // 7.
+// team1 < team2 && console.log('Team 1 win');
+// team1 > team2 && console.log('Team 2 win');
+
 // const rest1 = {
 //   name: 'Capri',
 //   // numGuests: 20,
