@@ -50,6 +50,28 @@ const restaurant = {
   },
 };
 
+const properties = Object.keys(openingHours);
+console.log(properties);
+
+for (const day of properties) {
+  console.log(day);
+}
+
+//Property VALUES
+const values = Object.values(openingHours);
+console.log(values);
+
+// Entire object
+const entries = Object.entries(openingHours);
+//console.log(entries);
+
+// [key,value]
+for (const [key, { open, close }] of entries) {
+  console.log(`On ${key} we open at ${open} and close ${close}`);
+}
+/*
+//////////////////////
+//Optional Chaining
 if (restaurant.openingHours.mon) console.log(restaurant.openingHours.mon.open);
 
 // WITH optional chaining
@@ -71,6 +93,7 @@ console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not ex');
 const users = [{ name: 'Kerim', email: 'hello@kerim.io' }];
 
 console.log(users[0]?.name ?? 'User empty');
+*/
 
 /*
 ///////////////////////////////
