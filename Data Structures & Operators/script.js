@@ -50,6 +50,48 @@ const restaurant = {
   },
 };
 
+const airline = 'Turkish Air Lines';
+const plane = 'A320';
+
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log('B737'[0]);
+
+console.log(airline.length);
+
+console.log(airline.indexOf('r'));
+console.log(airline.indexOf('Air'));
+
+console.log(airline.slice(4));
+console.log(airline.slice(4, 9));
+
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+console.log(airline.slice(-2));
+console.log(airline.slice(1, -2));
+
+const ckeckMiddleSeat = function (seat) {
+  //B and E are middle seat
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') console.log('You got the middle seat');
+  else console.log('You got lucky');
+};
+
+ckeckMiddleSeat('11B');
+ckeckMiddleSeat('23C');
+ckeckMiddleSeat('3E');
+
+console.log(new String('kerim'));
+console.log(typeof new String('kerim'));
+
+console.log(typeof new String('kerim').slice());
+
+/*
+//////////////////////
+//Code Challange 3 About maps and sets
+
 const gameEvents = new Map([
   [17, '⚽️ GOAL'],
   [36, '🔁 Substitution'],
@@ -88,6 +130,7 @@ for (const [min, event] of gameEvents) {
   const half = min <= 45 ? 'FIRST' : 'SECOND';
   console.log(`[${half} HALF] ${min} : ${event}`);
 }
+*/
 
 /*
 ////////////////////////////
