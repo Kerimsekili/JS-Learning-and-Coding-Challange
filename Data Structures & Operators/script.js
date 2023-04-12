@@ -53,6 +53,36 @@ const restaurant = {
 const airline = 'Turkish Air Lines';
 const plane = 'A320';
 
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+// Fix capitalization in name
+const passenger = 'KerIm';
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
+
+// Comparing email
+const email = 'hello@kerim.io';
+const loginEmail = 'Hello@kerim.İO \n';
+
+// const lowerEmail = loginEmail.toLowerCase();
+// const trimmedEmail = lowerEmail.trim();
+// console.log(trimmedEmail);
+
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+console.log(email === normalizedEmail);
+
+// replacing
+const priceGP = '234,43£';
+const priceUS = priceGP.replace('£', '$');
+console.log(priceUS);
+
+/*
+/////////////////////////
+// Working with STRINGS
 console.log(plane[0]);
 console.log(plane[1]);
 console.log(plane[2]);
@@ -68,8 +98,7 @@ console.log(airline.slice(4, 9));
 
 console.log(airline.slice(0, airline.indexOf(' ')));
 console.log(airline.slice(airline.lastIndexOf(' ') + 1));
-
-console.log(airline.slice(-2));
+ 
 console.log(airline.slice(1, -2));
 
 const ckeckMiddleSeat = function (seat) {
@@ -87,6 +116,7 @@ console.log(new String('kerim'));
 console.log(typeof new String('kerim'));
 
 console.log(typeof new String('kerim').slice());
+*/
 
 /*
 //////////////////////
