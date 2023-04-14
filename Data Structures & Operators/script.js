@@ -77,8 +77,32 @@ console.log(email === normalizedEmail);
 
 // replacing
 const priceGP = '234,43£';
-const priceUS = priceGP.replace('£', '$');
+const priceUS = priceGP.replace('£', '$').replace(',', '.');
 console.log(priceUS);
+
+const announcement =
+  'All passengers come to boarding door 19. Boarding door 19';
+
+console.log(announcement.replace('door', 'gate'));
+// console.log(announcement.replaceAll('door', 'gate'));
+
+console.log(announcement.replace(/door/g, 'gate'));
+
+// Booleans
+const plane1 = 'A23CS';
+console.log(plane1.includes('A23'));
+console.log(plane1.includes('Boing'));
+
+// Practice Exercise
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun'))
+    console.log('You are not allowed on board ! ');
+  else console.log('Welcome abroad ! ');
+};
+checkBaggage('I have a laptop,some food and a pocket knife');
+checkBaggage('Socks and camera');
+checkBaggage('Got some snacks and a gun for protection');
 
 /*
 /////////////////////////
