@@ -51,8 +51,10 @@ const newPassport = function (person) {
 
 newPassport(kerim);
 checkIn(flight, kerim);
-*/
 
+//////////////////////////
+
+//Functions accepting other functions
 const oneWord = function (str) {
   return str.replace(/ /g, '').toLowerCase();
 };
@@ -81,3 +83,18 @@ const high5 = function () {
 document.body.addEventListener('click', high5);
 
 ['Kerim', 'Zeynep', 'Furkan'].forEach(high5);
+*/
+
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+
+const greeterHey = greet('Hey');
+greeterHey('Kerim');
+greeterHey('Steven');
+
+greet('Hello')('Kerim');
+
+const greetArr = greeting => name => console.log(`${greeting} ${name}`);
