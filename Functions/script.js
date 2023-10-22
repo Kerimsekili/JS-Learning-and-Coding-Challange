@@ -239,12 +239,29 @@ The bind Method
 //   .querySelector('.poll')
 //   .addEventListener('click', poll.registerNewAnswer.bind(poll));
 
-const runOnce = function () {
-  console.log('This will never run again');
-};
-runOnce();
+// const runOnce = function () {
+//   console.log('This will never run again');
+// };
+// runOnce();
 
-// IIFE
-(function () {
-  console.log('This will never run again');
-})();
+// // IIFE
+// (function () {
+//   console.log('This will never run again');
+// })();
+
+const secureBooking = function () {
+  let passengerCount = 0;
+
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
+  };
+};
+
+const booker = secureBooking();
+
+booker();
+booker();
+booker();
+
+console.dir(booker);
